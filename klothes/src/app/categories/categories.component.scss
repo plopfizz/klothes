@@ -1,0 +1,38 @@
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    padding: 20px;
+    margin-right: 100px; 
+    padding-right: 130px; /* Adjust margin between nav items */
+    position: relative; /* Added position relative */
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative; /* Added position relative */
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::before {
+    width: 100%;
+  }
+  

@@ -1,0 +1,70 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.header-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: none;
+  vertical-align: middle;
+  .icon {
+    fill: #000;
+  }
+}
+
+header .navbar {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .navbar-brand {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+header .nav-item {
+  margin-right: 20px;
+}
+
+header .nav-link {
+  color: black;
+  position: relative;
+  transition: 0.3s;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+header .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: 0.3s;
+}
+
+header .nav-link:hover::before {
+  width: 100%;
+}
