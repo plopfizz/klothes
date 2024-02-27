@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  height: 500px;
+  height: calc(100vh - 350px);
   padding: 2em;
   flex-direction: row;
   column-gap: 4rem;
