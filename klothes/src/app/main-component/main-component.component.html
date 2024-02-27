@@ -1,6 +1,30 @@
 <div class="main-container">
   <app-header-component></app-header-component>
-  <app-categories></app-categories>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <div *ngIf="isLoading$ | async">
+    <div *ngIf="genders$ | async as gendersList">
+      <app-categories [gendersList]="gendersList"></app-categories>
+    </div>
+    <br />
+    <div *ngIf="selectedGender$ | async as selectedGender">
+      <app-gender-subproducts></app-gender-subproducts>
+    </div>
+    <div
+      *ngIf="{
+        productTypeSpecificList: productTypeSpecificList$ | async,
+        selectedGender: selectedGender$ | async
+      } as GenderSpecificList"
+    >
+      <ul class="navbar-nav">
+        <li
+          class="nav-item"
+          *ngFor="let entry of objectKeys(GenderSpecificList)"
+        >
+          <a class="nav-link">{{ entry.key }}</a>
+        </li>
+      </ul>
+
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <app-footer></app-footer> -->
+  </div>
 </div>
