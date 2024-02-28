@@ -11,6 +11,7 @@ export enum DifferentCategories {
   NEW_ARRIVALS = 'New Arrivals',
   DISCOVER = 'Discover',
   MOST_FAVORITED = 'Most Favorited',
+  BY_LENGTH ='By Length'
 }
 
 export enum ProductTypes {

@@ -13,15 +13,34 @@
         productTypeSpecificList: productTypeSpecificList$ | async,
         selectedGender: selectedGender$ | async
       } as GenderSpecificList"
+      (mouseleave)="hideSubProducts()"
     >
       <ul class="navbar-nav">
         <li
           class="nav-item"
           *ngFor="let entry of objectKeys(GenderSpecificList)"
         >
-          <a class="nav-link">{{ entry.key }}</a>
+          <a class="nav-link" (click)="changeDisplaySubProduct(entry.value)">{{
+            entry.key
+          }}</a>
         </li>
       </ul>
+      <div
+        *ngIf="onClickDisplaySubProducts"
+        style="
+          position: absolute;
+          top: 9rem;
+          background: white;
+          width: 100vw;
+          z-index: 500;
+        "
+      >
+        <app-sub-products-display
+          [subProductData]="subProductData"
+          (mouseleave)="hideSubProducts()"
+        >
+        </app-sub-products-display>
+      </div>
 
       <router-outlet></router-outlet>
     </div>

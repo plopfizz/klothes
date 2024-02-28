@@ -117,18 +117,18 @@ export const products: productType[] = [
   },
 
   // BRANDS WE LOVE - Type
-  {
-    name: 'BRANDS WE LOVE',
-    productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
-    gender: [Genders.WOMEN],
-  },
+  // {
+  //   name: 'BRANDS WE LOVE',
+  //   productType: ProductTypes.SHOES,
+  //   type: DifferentCategories.BRANDS_WE_LOVE,
+  //   gender: [Genders.WOMEN],
+  // },
 
   // Valentino Garavani
   {
     name: 'Valentino Garavani',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -136,7 +136,7 @@ export const products: productType[] = [
   {
     name: 'Converse',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -144,7 +144,7 @@ export const products: productType[] = [
   {
     name: 'Bottega Veneta',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -152,7 +152,7 @@ export const products: productType[] = [
   {
     name: 'Gucci',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -160,17 +160,17 @@ export const products: productType[] = [
   {
     name: 'Golden Goose',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
   // NEW ARRIVALS - Type
-  {
-    name: 'NEW ARRIVALS',
-    productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
-    gender: [Genders.WOMEN],
-  },
+  // {
+  //   name: 'NEW ARRIVALS',
+  //   productType: ProductTypes.SHOES,
+  //   type: DifferentCategories.NEW_ARRIVALS,
+  //   gender: [Genders.WOMEN],
+  // },
 
   // Ankle Boots
   {
@@ -220,12 +220,12 @@ export const products: productType[] = [
   // Include other discovery items...
 
   // MOST FAVORITED - Type
-  {
-    name: 'MOST FAVORITED',
-    productType: ProductTypes.SHOES,
-    type: DifferentCategories.MOST_FAVORITED,
-    gender: [Genders.WOMEN],
-  },
+  // {
+  //   name: 'MOST FAVORITED',
+  //   productType: ProductTypes.SHOES,
+  //   type: DifferentCategories.MOST_FAVORITED,
+  //   gender: [Genders.WOMEN],
+  // },
 
   // Sneakers
   {
@@ -299,12 +299,12 @@ export const products: productType[] = [
   },
 
   // BRANDS WE LOVE - Type
-  {
-    name: 'BRANDS WE LOVE',
-    productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
-    gender: [Genders.MEN],
-  },
+  // {
+  //   name: 'BRANDS WE LOVE',
+  //   productType: ProductTypes.SHOES,
+  //   type: DifferentCategories.SHOES,
+  //   gender: [Genders.MEN],
+  // },
 
   // Off-White
   {
@@ -348,9 +348,9 @@ export const products: productType[] = [
 
   // NEW ARRIVALS - Type
   {
-    name: 'NEW ARRIVALS',
+    name: 'Converse',
     productType: ProductTypes.SHOES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.NEW_ARRIVALS,
     gender: [Genders.MEN],
   },
 
@@ -395,7 +395,7 @@ export const products: productType[] = [
 
   // MOST FAVORITED - Type
   {
-    name: 'MOST FAVORITED',
+    name: 'Vans',
     productType: ProductTypes.SHOES,
     type: DifferentCategories.MOST_FAVORITED,
     gender: [Genders.MEN],
@@ -427,7 +427,7 @@ export const products: productType[] = [
   {
     name: 'All Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.SHOES,
+    type: DifferentCategories.CLOTHING,
     gender: [Genders.WOMEN],
   },
 
@@ -512,18 +512,18 @@ export const products: productType[] = [
   },
 
   // BY LENGTH - Type
-  {
-    name: 'BY LENGTH',
-    productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
-    gender: [Genders.WOMEN],
-  },
+  // {
+  //   name: 'BY LENGTH',
+  //   productType: ProductTypes.DRESSES,
+  //   type: DifferentCategories.BY_LENGTH,
+  //   gender: [Genders.WOMEN],
+  // },
 
   // Maxi Dresses
   {
     name: 'Maxi Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BY_LENGTH,
     gender: [Genders.WOMEN],
   },
 
@@ -531,7 +531,7 @@ export const products: productType[] = [
   {
     name: 'Midi Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BY_LENGTH,
     gender: [Genders.WOMEN],
   },
 
@@ -539,7 +539,7 @@ export const products: productType[] = [
   {
     name: 'Mini Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BY_LENGTH,
     gender: [Genders.WOMEN],
   },
 
@@ -547,23 +547,23 @@ export const products: productType[] = [
   {
     name: 'Knee Length Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BY_LENGTH,
     gender: [Genders.WOMEN],
   },
 
   // BRANDS WE LOVE - Type
-  {
-    name: 'BRANDS WE LOVE',
-    productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
-    gender: [Genders.WOMEN],
-  },
+  // {
+  //   name: 'BRANDS WE LOVE',
+  //   productType: ProductTypes.DRESSES,
+  //   type: DifferentCategories.BRANDS_WE_LOVE,
+  //   gender: [Genders.WOMEN],
+  // },
 
   // David Koma Dresses
   {
     name: 'David Koma Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -571,7 +571,7 @@ export const products: productType[] = [
   {
     name: 'Versace Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -579,7 +579,7 @@ export const products: productType[] = [
   {
     name: 'Samantha Sung Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -587,7 +587,7 @@ export const products: productType[] = [
   {
     name: 'Alexander McQueen Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -595,7 +595,7 @@ export const products: productType[] = [
   {
     name: 'Valentino Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -603,7 +603,7 @@ export const products: productType[] = [
   {
     name: 'St. John Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -611,7 +611,7 @@ export const products: productType[] = [
   {
     name: 'Oscar De La Renta Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
 
@@ -619,7 +619,7 @@ export const products: productType[] = [
   {
     name: 'Red Valentino Dresses',
     productType: ProductTypes.DRESSES,
-    type: DifferentCategories.CLOTHING,
+    type: DifferentCategories.BRANDS_WE_LOVE,
     gender: [Genders.WOMEN],
   },
   // For Men

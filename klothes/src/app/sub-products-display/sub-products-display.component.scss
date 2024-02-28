@@ -1,0 +1,28 @@
+.data {
+  display: flex;
+  justify-content: flex-start; /* Adjust alignment as needed */
+  padding-left: 50px;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  margin-right: 20px;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.list-items {
+  // list-style: none;
+  padding: 0;
+}
+
+.list-items li {
+  margin-bottom: 5px;
+}

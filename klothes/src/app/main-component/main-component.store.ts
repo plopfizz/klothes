@@ -15,7 +15,7 @@ export interface MainComponentState {
 
 export const initialState: MainComponentState = {
   genders: [Genders.WOMEN, Genders.MEN, Genders.KID],
-  selectedGender: '',
+  selectedGender: Genders.WOMEN,
   genderSpecificProducts: [],
   products: [],
   productTypeSpecificList: {},
@@ -77,4 +77,5 @@ export class MainComponentStore extends ComponentStore<MainComponentState> {
 
     this.patchState({ productTypeSpecificList: productTypeMap });
   }
+  
 }
