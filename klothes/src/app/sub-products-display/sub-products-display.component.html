@@ -1,0 +1,18 @@
+<div
+  class="data"
+  @carouselAnimation
+  *ngIf="selectedGender$ | async as selectedGender"
+>
+  <div class="columns">
+    <!-- Iterate over organizedData to create columns -->
+    <div class="column" *ngFor="let typeData of organizedData">
+      <h3>{{ typeData.type }}</h3>
+      <ul class="list-items">
+        <!-- Iterate over names in typeData and display them -->
+        <li *ngFor="let name of typeData.names">
+          <a [href]="'filter/' + selectedGender">{{ name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

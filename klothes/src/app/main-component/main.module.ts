@@ -12,6 +12,7 @@ import { UserLoginComponent } from '../components/user-login/user-login.componen
 import { WishlistComponent } from '../components/wishlist/wishlist.component';
 import { MainComponentComponent } from './main-component.component';
 import { GenderSubproductsComponent } from '../components/gender-subproducts/gender-subproducts.component';
+import { SubProductsDisplayComponent } from '../sub-products-display/sub-products-display.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HeaderComponentModule,
     GenderSubproductsComponent,
+    SubProductsDisplayComponent,
     FooterModule,
     CategoriesComponent,
     ProductsComponent,

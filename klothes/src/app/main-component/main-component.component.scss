@@ -1,16 +1,15 @@
 .main-container {
   display: flex;
   flex-direction: column;
- margin-top:80px;
- 
- 
+  margin-top: 80px;
 }
 
-
+li {
+  cursor: pointer;
+}
 .navbar-nav {
   display: flex;
   list-style: none;
-  // padding-top: 20px;
   margin: 0;
 }
 

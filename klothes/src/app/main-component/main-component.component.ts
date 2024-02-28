@@ -13,6 +13,8 @@ import { MainComponentStore } from './main-component.store';
 })
 export class MainComponentComponent {
   isLoading$ = this.mainComponentStore.isLoading$;
+  subProductData: any;
+  onClickDisplaySubProducts = false;
   selectedGender$ = this.mainComponentStore.selectedGender$;
   genders$ = this.mainComponentStore.genders$;
   products$ = this.mainComponentStore.products$;
@@ -24,7 +26,6 @@ export class MainComponentComponent {
     productTypeSpecificList: { [key: string]: productType[] } | null;
     selectedGender: string | null;
   }): { key: string; value: productType[] }[] {
-
     if (obj.productTypeSpecificList === null || obj.selectedGender === null) {
       return []; // Return an empty array if either property is null
     }
@@ -43,11 +44,18 @@ export class MainComponentComponent {
       }
     });
 
-
     // Return an array of key-value pairs
     return Object.keys(filteredData).map((key) => ({
       key,
       value: filteredData[key],
     }));
+  }
+  changeDisplaySubProduct(value: any) {
+      this.subProductData = value;
+      this.onClickDisplaySubProducts = !this.onClickDisplaySubProducts;
+    
+  }
+  hideSubProducts() {
+    this.onClickDisplaySubProducts = false;
   }
 }
