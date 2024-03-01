@@ -4,9 +4,7 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
+  Output
 } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Filter } from '../interfaces/product.interface';
@@ -20,7 +18,7 @@ import { PriceRangeFilterComponent } from '../price-range-filter/price-range-fil
   styleUrl: './product-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductFilterComponent implements OnChanges {
+export class ProductFilterComponent {
   @Input() filterOptions: Filter = {
     priceRange: { start: 0, end: 0 },
     brands: {},
@@ -30,9 +28,7 @@ export class ProductFilterComponent implements OnChanges {
   @Output() filterChange: EventEmitter<any> = new EventEmitter();
 
   selectedFilters: any = {};
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes, 'these are the changes');
-  }
+
   constructor() {}
 
   onFilterChange(filterType: string, filterValue: any) {
@@ -80,7 +76,6 @@ export class ProductFilterComponent implements OnChanges {
     //     this.selectedFilters[filterType] = [...allKeys];
     //   }
     // }
-    console.log(this.selectedFilters);
     this.filterChange.emit(this.selectedFilters);
   }
 }

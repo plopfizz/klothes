@@ -1,0 +1,27 @@
+<div
+  class="product-card"
+  (mouseover)="toggleHover()"
+  (mouseout)="toggleHover()"
+ 
+>
+  <div class="image-container">
+    <img
+      [src]="isHovered ? product.productImages[1] : product.productImages[0]"
+      alt="Product Image"  (click)="navigateTo(product.title)"
+    />
+    <div class="wishlist-icon">
+      <!-- Use ngClass to dynamically set class based on isWishListed property -->
+      <i
+        class="fa fa-heart"
+        (click)="changeWishlistStatus()"
+        [ngClass]="{ 'wishlist-selected': product.isWishListed }"
+      ></i>
+    </div>
+  </div>
+  <div class="product-details"  (click)="navigateTo(product.title)">
+    <div class="title">{{ product.title }}</div>
+    <div class="subtitle">{{ product.subTitle }}</div>
+    <div class="color" [style.background-color]="product.color"></div>
+    <div class="price">INR {{ product.price }}</div>
+  </div>
+</div>

@@ -1,1 +1,9 @@
-<p>{{ "this is the product list component" }}</p>
+<div class="product-list-container" >
+  <div class="product-list">
+    <app-product-card
+      *ngFor="let product of productList"
+      [product]="product"
+     
+    ></app-product-card>
+  </div>
+</div>

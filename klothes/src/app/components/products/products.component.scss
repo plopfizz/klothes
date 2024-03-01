@@ -3,17 +3,14 @@
   margin-top: 20px;
   height: calc(100vh - 20px);
   flex-direction: row;
-  background-color: #f1eee8;
 }
 
 .filters-container {
   flex: 0 0 30%;
   max-width: 20%;
-  border:1px dotted black;
 }
 
 .product-list-container {
   flex: 1;
   max-width: 80%;
-  border:1px dotted black;
 }

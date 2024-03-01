@@ -1,0 +1,31 @@
+<div class="selected-filters" *ngIf="selectedFilters">
+  <div
+    *ngIf="selectedFilters.colors && selectedFilters.colors.length > 0"
+    class="filter-category"
+  >
+    <div class="filter-values">
+      <div *ngFor="let color of selectedFilters.colors" class="filter-value">
+        <span>{{ color }}</span>
+        <button (click)="removeFilter('colors', color)" class="cancel-button">
+          ×
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="selectedFilters.sizes && selectedFilters.sizes.length > 0"
+    class="filter-category"
+  >
+    <div class="filter-values">
+      <div *ngFor="let size of selectedFilters.sizes" class="filter-value">
+        <span>{{ size }}</span>
+        <button (click)="removeFilter('sizes', size)" class="cancel-button">
+          ×
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add other filter categories similarly if needed -->
+</div>

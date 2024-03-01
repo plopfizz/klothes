@@ -1,0 +1,47 @@
+<div class="product-overview">
+  <!-- Images Section -->
+  <div class="images-section">
+    <div class="image-pair" *ngFor="let pair of imagePairs">
+      <div class="image-container" *ngFor="let image of pair">
+        <img
+          [src]="image"
+          alt="Product Image"
+          (mousemove)="zoomImage($event)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Details Section -->
+  <!-- Details Section -->
+  <div class="details-section">
+    <div class="brand">{{ product.brand }}</div>
+    <div class="title">{{ product.title }}</div>
+    <div class="subTitle smaller">{{ product.subTitle }}</div>
+    <div class="price">₹{{ product.price }}</div>
+    <div class="sizes">
+      <div
+        *ngFor="let size of product.sizes"
+        [ngClass]="{
+          available: size.isAvailable,
+          selected: selectedSize === size.sizeNumber
+        }"
+        (click)="toggleSizeSelection(size)"
+      >
+        {{ size.sizeNumber }}
+      </div>
+    </div>
+    <div class="add-to-bag">
+      <button
+        class="add-to-bag-btn"
+        [disabled]="selectedSize === null"
+        (click)="addToBag()"
+        (mouseenter)="showTooltip = selectedSize === null"
+        (mouseleave)="showTooltip = false"
+      >
+        Add to Bag
+      </button>
+      <div class="tooltip" *ngIf="showTooltip">Please select a size</div>
+    </div>
+  </div>
+</div>

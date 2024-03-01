@@ -41,59 +41,60 @@
     <span>{{ brandGroup.key }} ({{ brandGroup.value.length }})</span>
   </div>
 </div> -->
+<div class="filter-container">
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Colors </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <input type="checkbox" (change)="onSelectAll('colors', $event)" />
+    <span>Select All</span>
+    <div *ngFor="let colorGroup of filterOptions.colors | keyvalue">
+      <input
+        type="checkbox"
+        [value]="colorGroup.key"
+        (change)="onFilterChange('colors', colorGroup.key)"
+        [checked]="selectedFilters.colors?.includes(colorGroup.key)"
+      />
+      <span>{{ colorGroup.key }} ({{ colorGroup.value.length }})</span>
+    </div>
+  </mat-expansion-panel>
 
-<mat-expansion-panel expanded="true">
-  <mat-expansion-panel-header>
-    <mat-panel-title> Colors </mat-panel-title>
-    <mat-panel-description> </mat-panel-description>
-  </mat-expansion-panel-header>
-  <input type="checkbox" (change)="onSelectAll('colors', $event)" />
-  <span>Select All</span>
-  <div *ngFor="let colorGroup of filterOptions.colors | keyvalue">
-    <input
-      type="checkbox"
-      [value]="colorGroup.key"
-      (change)="onFilterChange('colors', colorGroup.key)"
-      [checked]="selectedFilters.colors?.includes(colorGroup.key)"
-    />
-    <span>{{ colorGroup.key }} ({{ colorGroup.value.length }})</span>
-  </div>
-</mat-expansion-panel>
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Sizes </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <input type="checkbox" (change)="onSelectAll('sizes', $event)" />
+    <span>Select All</span>
+    <div *ngFor="let sizeGroup of filterOptions.sizes | keyvalue">
+      <input
+        type="checkbox"
+        [value]="sizeGroup.key"
+        (change)="onFilterChange('sizes', sizeGroup.key)"
+        [checked]="selectedFilters.sizes?.includes(sizeGroup.key)"
+      />
+      <span>{{ sizeGroup.key }} ({{ sizeGroup.value.length }})</span>
+    </div>
+  </mat-expansion-panel>
 
-<mat-expansion-panel expanded="true">
-  <mat-expansion-panel-header>
-    <mat-panel-title> Sizes </mat-panel-title>
-    <mat-panel-description> </mat-panel-description>
-  </mat-expansion-panel-header>
-  <input type="checkbox" (change)="onSelectAll('sizes', $event)" />
-  <span>Select All</span>
-  <div *ngFor="let sizeGroup of filterOptions.sizes | keyvalue">
-    <input
-      type="checkbox"
-      [value]="sizeGroup.key"
-      (change)="onFilterChange('sizes', sizeGroup.key)"
-      [checked]="selectedFilters.sizes?.includes(sizeGroup.key)"
-    />
-    <span>{{ sizeGroup.key }} ({{ sizeGroup.value.length }})</span>
-  </div>
-</mat-expansion-panel>
+  <mat-expansion-panel expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> Brands </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <input type="checkbox" (change)="onSelectAll('brands', $event)" />
+    <span>Select All</span>
+    <div *ngFor="let brandGroup of filterOptions.brands | keyvalue">
+      <input
+        type="checkbox"
+        [value]="brandGroup.key"
+        (change)="onFilterChange('brands', brandGroup.key)"
+        [checked]="selectedFilters.brands?.includes(brandGroup.key)"
+      />
+      <span>{{ brandGroup.key }} ({{ brandGroup.value.length }})</span>
+    </div>
+  </mat-expansion-panel>
 
-<mat-expansion-panel expanded="true">
-  <mat-expansion-panel-header>
-    <mat-panel-title> Brands </mat-panel-title>
-    <mat-panel-description> </mat-panel-description>
-  </mat-expansion-panel-header>
-  <input type="checkbox" (change)="onSelectAll('brands', $event)" />
-  <span>Select All</span>
-  <div *ngFor="let brandGroup of filterOptions.brands | keyvalue">
-    <input
-      type="checkbox"
-      [value]="brandGroup.key"
-      (change)="onFilterChange('brands', brandGroup.key)"
-      [checked]="selectedFilters.brands?.includes(brandGroup.key)"
-    />
-    <span>{{ brandGroup.key }} ({{ brandGroup.value.length }})</span>
-  </div>
-</mat-expansion-panel>
-
-<app-price-range-filter></app-price-range-filter>
+  <app-price-range-filter></app-price-range-filter>
+</div>

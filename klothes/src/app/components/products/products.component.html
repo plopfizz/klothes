@@ -1,10 +1,16 @@
 <div class="container">
   <div class="filters-container">
     <!-- <app-filters></app-filters> -->
-    <app-product-filter [filterOptions]="filterOptions" (filterChange)="applyFilter($event)"></app-product-filter>
-
+    <app-product-filter
+      [filterOptions]="filterOptions"
+      (filterChange)="applyFilter($event)"
+    ></app-product-filter>
   </div>
   <div class="product-list-container">
-    <app-product-list [productList]="products"></app-product-list>
+    <app-filter-display
+      [selectedFilters]="selectedFilters"
+    ></app-filter-display>
+
+    <app-product-list [productList]="filteredProductsList"></app-product-list>
   </div>
 </div>
