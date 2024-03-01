@@ -1,0 +1,29 @@
+<div class="price-range-filter">
+  <h3>Price Range Filter</h3>
+  <div class="form-group">
+    <label for="startPrice">Start Price:</label>
+    <input
+      type="number"
+      id="startPrice"
+      [(ngModel)]="priceRange.start"
+      (ngModelChange)="updateFilter()"
+    />
+  </div>
+  <div class="form-group">
+    <label for="endPrice">End Price:</label>
+    <input
+      type="number"
+      id="endPrice"
+      [(ngModel)]="priceRange.end"
+      (ngModelChange)="updateFilter()"
+    />
+  </div>
+</div>
+<!-- <div class="price-range-slider">
+  <ngx-slider
+  [(ngModel)]="priceRange"
+  [options]="{ floor: 0, ceil: 1000, tickStep: 10 }"
+  (ngModelChange)="onPriceRangeChange()">
+</ngx-slider>
+  <div class="selection-bar" [style.width.%]="calculateSelectionWidth()"></div>
+</div> -->

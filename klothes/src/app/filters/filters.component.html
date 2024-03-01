@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-accordion>
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="accordion-content">
+            <div class="filter-accordion__title">Color</div>
+            <div class="filter-accordion__subtitle">{{ subtitle }}</div>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <div class="color-filters">
+          <input
+            type="checkbox"
+            id="filter-content-all-color"
+            name="AllColors"
+            (change)="toggleSelection({ color: '', name: 'All' })"
+            [checked]="selectedColors.length === colors.length"
+            tabindex="0"
+          />
+          <label for="filter-content-all-color"> All Colors </label>
+
+          <div
+            class="filter-option"
+            *ngFor="let color of colors; let i = index"
+          >
+            <input
+              type="checkbox"
+              id="filter-content-{{ i }}-color"
+              name="Color"
+              [checked]="isColorSelected(color)"
+              (change)="toggleSelection(color)"
+              [tabindex]="i === 0 ? '0' : '-1'"
+              [disabled]="
+                selectedColors.length === colors.length && color.name !== 'All'
+              "
+            />
+            <label for="filter-content-{{ i }}-color">
+              <span
+                class="color-circle"
+                [style.background-color]="color.color"
+              ></span>
+              {{ color.name }}
+            </label>
+          </div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<app-price-range-filter></app-price-range-filter>

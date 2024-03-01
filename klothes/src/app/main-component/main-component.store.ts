@@ -9,7 +9,7 @@ export interface MainComponentState {
   genderSpecificProducts: [];
   products: productType[];
   productTypeSpecificList: { [key: string]: productType[] } | null;
-
+  onClickDisplaySubProducts :boolean;
   isLoading: boolean;
 }
 
@@ -18,6 +18,7 @@ export const initialState: MainComponentState = {
   selectedGender: Genders.WOMEN,
   genderSpecificProducts: [],
   products: [],
+  onClickDisplaySubProducts: false,
   productTypeSpecificList: {},
   isLoading: true,
 };
@@ -27,6 +28,7 @@ export class MainComponentStore extends ComponentStore<MainComponentState> {
     super(initialState);
   }
   genders$ = this.select((state) => state.genders);
+  onClickDisplaySubProducts$ = this.select((state) => state.onClickDisplaySubProducts);
   products$ = this.select((state) => state.products);
   productTypeSpecificList$ = this.select(
     (state) => state.productTypeSpecificList
@@ -38,6 +40,9 @@ export class MainComponentStore extends ComponentStore<MainComponentState> {
   isLoading$ = this.select((state) => state.isLoading);
   setGender(gender: string) {
     this.patchState({ selectedGender: gender });
+  }
+  setOnClickDisplaySubProducts(value: boolean) {
+    this.patchState({ onClickDisplaySubProducts: value });
   }
 
   appendGendersForSameName(products: productType[]) {

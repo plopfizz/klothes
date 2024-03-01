@@ -17,14 +17,14 @@ export class GenderSubproductsComponent {
   ) {}
   @Input() gendersList: Genders[] = [];
 
-  navigate(type: string) {
+  navigate(gender: string) {
     if (
-      type === Genders.WOMEN ||
-      type === Genders.MEN ||
-      type === Genders.KID
+      gender === Genders.WOMEN ||
+      gender === Genders.MEN ||
+      gender === Genders.KID
     ) {
-      this.mainComponentStore.setGender(type);
-      this.router.navigate(['/browse', type]);
+      this.mainComponentStore.setGender(gender);
+      this.router.navigate(['/browse', gender]);
     } else {
       // Handle invalid type
       // Display an error message or redirect to a default route
