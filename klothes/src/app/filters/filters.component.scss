@@ -1,0 +1,44 @@
+.container {
+  padding: 20px;
+}
+
+.mat-panel-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-accordion__title {
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.filter-accordion__subtitle {
+  font-size: 14px; /* Adjust the font size as needed */
+  opacity: 0.7; /* Adjust the opacity as needed */
+}
+
+.color-option {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+
+.mat-expansion-panel-content {
+  padding: 0;
+}
+
+.color-circle {
+  display: inline-block;
+  width: 15px; /* Adjust the width as needed */
+  height: 15px; /* Adjust the height as needed */
+  border-radius: 50%;
+  margin-right: 5px;
+}

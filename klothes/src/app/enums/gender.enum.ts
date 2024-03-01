@@ -6,16 +6,25 @@ export enum Genders {
 
 export enum DifferentCategories {
   CLOTHING = 'Clothing',
-  SHOES = 'Shoes',
-  BRANDS_WE_LOVE = 'Brands We Love',
-  NEW_ARRIVALS = 'New Arrivals',
-  DISCOVER = 'Discover',
-  MOST_FAVORITED = 'Most Favorited',
-  BY_LENGTH ='By Length'
+  SHOES = 'Footwear',
+  // BRANDS_WE_LOVE = 'Brands We Love',
+  // NEW_ARRIVALS = 'New Arrivals',
+  // DISCOVER = 'Discover',
+  // MOST_FAVORITED = 'Most Favorited',
+  // BY_LENGTH ='By Length'
 }
 
 export enum ProductTypes {
   CLOTHING = 'Clothing',
   DRESSES = 'Dresses',
-  SHOES = 'Shoes',
+  SHOES = 'Footwear',
+}
+
+ // color.enum.ts
+ export enum Color {
+  Black = 'Black',
+  Brown = 'Brown',
+  Blue = 'Blue',
+  Red = 'Red',
+  White = 'White',
 }

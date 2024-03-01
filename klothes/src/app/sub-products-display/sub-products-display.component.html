@@ -10,7 +10,7 @@
       <ul class="list-items">
         <!-- Iterate over names in typeData and display them -->
         <li *ngFor="let name of typeData.names">
-          <a [href]="'filter/' + selectedGender">{{ name }}</a>
+          <a (click)="navigateTo(typeData.type,selectedGender,name)">{{ name }}</a>
         </li>
       </ul>
     </div>

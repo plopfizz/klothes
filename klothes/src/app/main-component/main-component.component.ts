@@ -14,11 +14,12 @@ import { MainComponentStore } from './main-component.store';
 export class MainComponentComponent {
   isLoading$ = this.mainComponentStore.isLoading$;
   subProductData: any;
-  onClickDisplaySubProducts = false;
   selectedGender$ = this.mainComponentStore.selectedGender$;
   genders$ = this.mainComponentStore.genders$;
   products$ = this.mainComponentStore.products$;
   productTypeSpecificList$ = this.mainComponentStore.productTypeSpecificList$;
+  onClickDisplaySubProducts$ =
+    this.mainComponentStore.onClickDisplaySubProducts$;
   constructor(private mainComponentStore: MainComponentStore) {
     this.mainComponentStore.appendGendersForSameName(products);
   }
@@ -50,12 +51,13 @@ export class MainComponentComponent {
       value: filteredData[key],
     }));
   }
-  changeDisplaySubProduct(value: any) {
-      this.subProductData = value;
-      this.onClickDisplaySubProducts = !this.onClickDisplaySubProducts;
-    
+  changeDisplaySubProduct(value: any, onClickDisplaySubProducts: boolean) {
+    this.subProductData = value;
+    this.mainComponentStore.setOnClickDisplaySubProducts(
+      onClickDisplaySubProducts
+    );
   }
-  hideSubProducts() {
-    this.onClickDisplaySubProducts = false;
+  hideSubProducts(value: boolean) {
+    this.mainComponentStore.setOnClickDisplaySubProducts(!value);
   }
 }

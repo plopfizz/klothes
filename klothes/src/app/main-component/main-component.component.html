@@ -1,6 +1,6 @@
 <div class="main-container">
-  <app-header-component></app-header-component>
-  <div *ngIf="isLoading$ | async">
+  <app-header-component class="sticky-header"></app-header-component>
+  <div *ngIf="isLoading$ | async" class="main-block">
     <div *ngIf="genders$ | async as gendersList">
       <app-categories [gendersList]="gendersList"></app-categories>
     </div>
@@ -11,39 +11,48 @@
     <div
       *ngIf="{
         productTypeSpecificList: productTypeSpecificList$ | async,
-        selectedGender: selectedGender$ | async
+        selectedGender: selectedGender$ | async,
+        clickDisplaySubProducts: onClickDisplaySubProducts$ | async
       } as GenderSpecificList"
-      (mouseleave)="hideSubProducts()"
+      (mouseleave)="
+        hideSubProducts(!GenderSpecificList.clickDisplaySubProducts)
+      "
     >
       <ul class="navbar-nav">
         <li
           class="nav-item"
           *ngFor="let entry of objectKeys(GenderSpecificList)"
         >
-          <a class="nav-link" (click)="changeDisplaySubProduct(entry.value)">{{
-            entry.key
-          }}</a>
+          <a
+            class="nav-link"
+            (click)="
+              changeDisplaySubProduct(
+                entry.value,
+                !GenderSpecificList.clickDisplaySubProducts
+              )
+            "
+            >{{ entry.key }}</a
+          >
         </li>
       </ul>
       <div
-        *ngIf="onClickDisplaySubProducts"
+        *ngIf="onClickDisplaySubProducts$ | async as clickDisplaySubProducts"
         style="
           position: absolute;
           top: 9rem;
           background: white;
-          width: 100vw;
+          width: 98vw;
           z-index: 500;
         "
       >
         <app-sub-products-display
           [subProductData]="subProductData"
-          (mouseleave)="hideSubProducts()"
+          (mouseleave)="hideSubProducts(clickDisplaySubProducts)"
         >
         </app-sub-products-display>
       </div>
-
-      <router-outlet></router-outlet>
-    </div>
-    <!-- <app-footer></app-footer> -->
+    </div>  
   </div>
+  <router-outlet></router-outlet>
+    <!-- <app-footer></app-footer> -->
 </div>
