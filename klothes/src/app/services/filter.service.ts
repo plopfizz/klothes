@@ -17,11 +17,6 @@ export class FilterService {
 
   constructor() {}
 
-  // setFilter(category: string, options: Partial<Filter>): void {
-  //   this.filters[category] = options;
-  //   this.filters$.next(this.filters);
-  // }
-
   setFilters(filters: Filter): void {
     this.filters = filters;
     this.filters$.next(this.filters);
@@ -35,18 +30,5 @@ export class FilterService {
     this.filters$.next(this.filters);
   }
 
-  //   setBrands(brands: keyValue): void {
-  //     this.filters.brands = brands;
-  //     this.filters$.next(this.filters);
-  //   }
 
-  //   setColors(colors: keyValue): void {
-  //     this.filters.colors = colors;
-  //     this.filters$.next(this.filters);
-  //   }
-
-  //   setSizes(sizes: keyValue): void {
-  //     this.filters.sizes = sizes;
-  //     this.filters$.next(this.filters);
-  //   }
 }

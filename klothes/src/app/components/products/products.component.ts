@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FilterDisplayComponent } from '../../filter-display/filter-display.component';
 import { FiltersComponent } from '../../filters/filters.component';
 import { Filter, Product } from '../../interfaces/product.interface';
 import { ProductFilterComponent } from '../../product-filter/product-filter.component';
@@ -9,12 +10,18 @@ import { ProductService } from '../../services/products.service';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [FiltersComponent, ProductListComponent, ProductFilterComponent],
+  imports: [
+    FiltersComponent,
+    ProductListComponent,
+    ProductFilterComponent,
+    FilterDisplayComponent,
+  ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
+  filteredProductsList: Product[] = [];
   priceRange: { start: number; end: number } = { start: 0, end: 0 };
   brands: { [key: string]: Product[] } = {};
   colors: { [key: string]: Product[] } = {};
@@ -25,6 +32,7 @@ export class ProductsComponent implements OnInit {
     sizes: {},
   };
   filteredProducts: any;
+  selectedFilters: any;
   constructor(
     private filterService: FilterService,
     private productService: ProductService
@@ -32,15 +40,39 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
-    console.log('Hi ewra rein ngonint');
+    this.filteredProductsList = this.products;
     this.filterService.filters$.subscribe((filters) => {
-      console.log(filters);
       this.loadProducts(filters);
+    });
+  }
+  filterProducts(): Product[] {
+    return this.products.filter((product) => {
+      return Object.keys(this.selectedFilters).every((category) => {
+        if (
+          !this.selectedFilters[category] ||
+          this.selectedFilters[category].length === 0
+        ) {
+          return true;
+        }
+        if (category === 'sizes') {
+          // Check if any selected sizeNumber is available in the product's sizes
+          return this.selectedFilters.sizes.some((selectedSize: string) =>
+            product.sizes.some(
+              (size) => size.sizeNumber.toString() === selectedSize
+            )
+          );
+        }
+        return (
+          this.selectedFilters[category].includes(product['brand']) ||
+          this.selectedFilters[category].includes(product['color'])
+        );
+      });
     });
   }
 
   applyFilter(selectedFilters: any) {
-    console.log(selectedFilters);
+    this.selectedFilters = selectedFilters;
+    this.filteredProductsList = this.filterProducts();
   }
   loadProducts(filters: any = {}): void {
     this.priceRange = filters.priceRange;
@@ -48,10 +80,6 @@ export class ProductsComponent implements OnInit {
     this.productService.getFilteredProducts(filters).subscribe(
       (products: Product[]) => {
         this.products = products;
-        // const cachedFilters = this.filterService.getFilters();
-        // if (JSON.stringify(cachedFilters) === JSON.stringify(filters)) {
-        //   return;
-        // }
         this.calculateFilters();
       },
       (error) => {
@@ -87,13 +115,11 @@ export class ProductsComponent implements OnInit {
     const colors: { [key: string]: Product[] } = {};
     const sizes: { [key: string]: Product[] } = {};
     this.products.forEach((product: Product) => {
-      //populating the brands datastructure
       this.populateDataStructure(brands, product.brand, product);
 
-      // Populate colors data structure
       this.populateDataStructure(colors, product.color, product);
       product.sizes.forEach((sizeObj) => {
-        const sizeKey = 'size ' + sizeObj.sizeNumber;
+        const sizeKey = sizeObj.sizeNumber;
         if (!sizes[sizeKey]) {
           sizes[sizeKey] = [];
         }
@@ -101,7 +127,6 @@ export class ProductsComponent implements OnInit {
       });
     });
     if (this.priceRange) this.calculatePriceRangeForProducts();
-    console.log(brands, colors, sizes, this.priceRange);
 
     const filters: Filter = {
       brands,

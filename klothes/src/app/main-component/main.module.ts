@@ -11,9 +11,9 @@ import { ProductsComponent } from '../components/products/products.component';
 import { UserLoginComponent } from '../components/user-login/user-login.component';
 import { WishlistComponent } from '../components/wishlist/wishlist.component';
 import { HomeComponent } from '../home/home.component';
+import { ProductOverviewComponent } from '../product-overview/product-overview.component';
 import { SubProductsDisplayComponent } from '../sub-products-display/sub-products-display.component';
 import { MainComponentComponent } from './main-component.component';
-import { ProductListComponent } from '../product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,8 +21,14 @@ const routes: Routes = [
   { path: 'wishlist', component: WishlistComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'bag', component: BagComponent },
-  { path: 'browse/:gender/:subCategory/:product', component: ProductsComponent,pathMatch: 'full' },
+  {
+    path: 'browse/:gender/:subCategory/:product',
+    component: ProductsComponent,
+    pathMatch: 'full',
+  },
   { path: 'browse/:gender', component: ProductsComponent },
+  { path: 'product-overview/:title', component: ProductOverviewComponent },
+
   { path: '**', component: PageNotFoundComponent },
 ];
 

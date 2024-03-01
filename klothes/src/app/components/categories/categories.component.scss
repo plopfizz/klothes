@@ -25,3 +25,29 @@
   position: relative; /* Added position relative */
   border-bottom: 0.0625rem solid transparent;
 }
+
+.wishlist-icon-container, .addToBag-icon-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.wishlist-icon, .addToBag-icon {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.wishlist-count, .addToBag-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

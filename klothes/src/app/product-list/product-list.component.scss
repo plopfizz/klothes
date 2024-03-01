@@ -1,0 +1,17 @@
+.product-list-container {
+    max-height: 600px; /* Set the maximum height as per your requirement */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    padding-right: 10px; /* Adjust for scrollbar width */
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as per your layout needs */
+  }
+  
+  /* Adjust as per your layout needs */
+  .app-product-card {
+    margin-bottom: 20px;
+  }
+  

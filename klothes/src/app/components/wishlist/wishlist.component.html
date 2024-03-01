@@ -1,1 +1,9 @@
-<p>wishlist works!</p>
+<!-- wishlist.component.html -->
+
+<div class="wishlist-card">
+    <h2 class="wishlist-title">Wishlist {{ wishlistCount }}</h2>
+    <div class="wishlist-items">
+      <app-product-card *ngFor="let item of wishlistItems" [product]="item"></app-product-card>
+    </div>
+  </div>
+  

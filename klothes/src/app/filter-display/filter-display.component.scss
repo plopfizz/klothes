@@ -1,0 +1,32 @@
+.selected-filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-category {
+  margin-right: 20px; /* Adjust spacing between categories */
+}
+
+.filter-values {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-value {
+  background-color: #e0e0e0;
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin-right: 8px; /* Adjust spacing between filter values */
+  margin-bottom: 8px; /* Adjust spacing between rows */
+  display: flex;
+  align-items: center;
+}
+
+.cancel-button {
+  background-color: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 4px;
+}

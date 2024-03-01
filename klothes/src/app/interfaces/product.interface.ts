@@ -6,6 +6,7 @@ export interface Product {
   sizes: Size[];
   productImages: string[];
   color: string;
+  isWishListed:boolean
 }
 
 export interface Size {
